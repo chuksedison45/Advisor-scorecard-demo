@@ -10,7 +10,7 @@ const REPORT_IDS = {
     totalPipeline: '00O_TotalPipeline_Rep_ID',
     'Revenue & Growth': '00O_RevenueGrowth_Rep_ID',
     'Client Engagement': '00O_ClientEngagement_Rep_ID',
-    'Advisor Quality': '00O_AdvisorQuality_Rep_ID',
+    'Advisor Quality': '00OgL00000Agn1lUAB',
     Adoption: '00O_Adoption_Rep_ID'
 };
 
