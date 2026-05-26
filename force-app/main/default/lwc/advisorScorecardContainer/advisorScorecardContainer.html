@@ -1,0 +1,253 @@
+<template>
+    <div class="dashboard-container slds-p-around_medium">
+        <h1 class="slds-text-heading_large slds-m-bottom_medium header-title">Advisor Scorecard Overview</h1>
+
+        <div class="slds-box slds-theme_default slds-m-bottom_medium kpi-bar">
+            <ul class="slds-list_horizontal slds-has-inline-block-links_space slds-has-dividers_right">
+                <template for:each={kpis} for:item="kpi">
+                    <li key={kpi.id} class="slds-item kpi-clickable" data-report-id={kpi.reportId}
+                        onclick={handleNavigateToReport}>
+                        <a href="javascript:void(0);">
+                            {kpi.label}: <strong>{kpi.value}</strong>
+                        </a>
+                    </li>
+                </template>
+            </ul>
+        </div>
+
+        <div class="slds-box slds-theme_default slds-m-bottom_medium slds-grid slds-gutters slds-text-align_center">
+            <template for:each={donutCharts} for:item="chart">
+                <div key={chart.title} class="slds-col slds-size_1-of-5 report-link" data-report-id={chart.reportId} onclick={handleNavigateToReport} role="button" tabindex="0" aria-label="View {chart.title} report">
+                    <div class="slds-text-heading_small slds-m-bottom_small chart-title">{chart.title}</div>
+                    <div class="donut-chart" style={chart.style}>
+                        <div class="donut-inner">
+                            <span class="donut-text">{chart.value}</span>
+                        </div>
+                    </div>
+                    <div class="slds-m-top_small report-link-text">View report</div>
+                </div>
+            </template>
+            <div class="slds-col slds-size_1-of-5 chart-divider report-link" data-report-id={pipelineData.reportId} onclick={handleNavigateToReport} role="button" tabindex="0" aria-label="View Total Pipeline report">
+                <div class="slds-text-heading_small slds-m-bottom_small chart-title">Total Pipeline</div>
+                <div class="pipeline-metric">
+                    <span class="pipeline-number">{pipelineData.openOpportunityCount}</span>
+                    <div class="bar-chart-mock">
+                        <div class="bar" style="height: 10px;"></div>
+                        <div class="bar" style="height: 15px;"></div>
+                        <div class="bar" style="height: 25px;"></div>
+                        <div class="bar" style="height: 40px;"></div>
+                    </div>
+                    <span class="slds-text-body_small">Open Opportunities</span>
+                    <span class="slds-text-body_small slds-block">{pipelineAmountText} Pipeline</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-gutters slds-m-bottom_medium">
+            <div class="slds-col slds-size_1-of-2">
+                <article class="slds-card custom-card">
+                    <div class="slds-card__header slds-grid card-header-custom">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <lightning-icon icon-name="standard:user" size="small"
+                                class="slds-m-right_small"></lightning-icon>
+                            <h2 class="slds-text-heading_small slds-truncate">PRIORITY ALERTS</h2>
+                        </header>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner">
+                        <ul class="slds-list_vertical slds-has-dividers_bottom-space">
+                            <template for:each={priorityAlerts} for:item="alert">
+                                <li key={alert.text} class="slds-item slds-p-vertical_small">
+                                    <strong>{alert.count}</strong>; {alert.text}
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2">
+                <article class="slds-card custom-card">
+                    <div class="slds-card__header slds-grid card-header-custom">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <lightning-icon icon-name="standard:performance" size="small"
+                                class="slds-m-right_small"></lightning-icon>
+                            <h2 class="slds-text-heading_small slds-truncate">ADVISOR PERFORMANCE</h2>
+                        </header>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner">
+                        <ul class="slds-list_vertical slds-has-dividers_bottom-space">
+                            <template for:each={advisorPerformance} for:item="perf">
+                                <li key={perf.label} class="slds-item slds-p-vertical_small">
+                                    <span class="slds-text-color_weak">{perf.label}:</span> <strong>{perf.name}</strong>
+                                    <span class={perf.valueClass}> {perf.value}</span>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2">
+                <article class="slds-card custom-card">
+                    <div class="slds-card__header slds-grid card-header-custom">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <lightning-icon icon-name="standard:user" size="small"
+                                class="slds-m-right_small"></lightning-icon>
+                            <h2 class="slds-text-heading_small slds-truncate">CLIENT FOCUS</h2>
+                        </header>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner">
+                        <ul class="slds-list_vertical slds-has-dividers_bottom-space">
+                            <template for:each={clientFocus} for:item="focus">
+                                <li key={focus.text} class="slds-item slds-p-vertical_small">
+                                    <template if:true={focus.count}>
+                                        <strong>{focus.count}</strong>
+                                    </template>
+                                    {focus.text}
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2">
+                <article class="slds-card custom-card">
+                    <div class="slds-card__header slds-grid card-header-custom">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <lightning-icon icon-name="standard:user" size="small"
+                                class="slds-m-right_small"></lightning-icon>
+                            <h2 class="slds-text-heading_small slds-truncate">CLIENT METRICS</h2>
+                        </header>
+                    </div>
+                    <div class="slds-card__body slds-p-horizontal_small">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th scope="col">
+                                        <div class="slds-truncate">Advisor Name</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">Total Clients</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">AUM</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">Growth</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">Compliance</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={clientMetrics} for:item="metric">
+                                    <tr key={metric.id}>
+                                        <td data-label="Advisor Name">
+                                            <div class="slds-truncate advisor-name">{metric.name}</div>
+                                        </td>
+                                        <td data-label="Total Clients">
+                                            <div class="slds-truncate">{metric.clients}</div>
+                                        </td>
+                                        <td data-label="AUM">
+                                            <div class="slds-truncate"><strong>{metric.aum}</strong></div>
+                                        </td>
+                                        <td data-label="Growth">
+                                            <div class="slds-truncate growth-green">{metric.growth}</div>
+                                        </td>
+                                        <td data-label="Compliance">
+                                            <div class="slds-truncate">
+                                                <lightning-icon icon-name={metric.iconName} size="x-small"
+                                                    variant={metric.iconVariant}
+                                                    class="slds-m-right_xx-small"></lightning-icon>
+                                                {metric.status}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-gutters slds-m-bottom_medium">
+            <div class="slds-col slds-size_1-of-1">
+                <article class="slds-card custom-card">
+                    <div class="slds-card__header slds-grid card-header-custom">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <lightning-icon icon-name="standard:task" size="small"
+                                class="slds-m-right_small"></lightning-icon>
+                            <h2 class="slds-text-heading_small slds-truncate">COMPLIANCE SUMMARY</h2>
+                        </header>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner">
+                        <template if:true={compliancePillars.length}>
+                            <ul class="slds-list_vertical slds-has-dividers_bottom-space">
+                                <template for:each={compliancePillars} for:item="pillar">
+                                    <li key={pillar.pillar} class="slds-item slds-p-vertical_small">
+                                        <strong>{pillar.pillar}:</strong>
+                                        <span class="slds-text-color_weak">G:{pillar.green} • A:{pillar.amber} • R:{pillar.red}</span>
+                                        <div class="slds-text-color_weak slds-m-top_xx-small">{pillar.callout}</div>
+                                    </li>
+                                </template>
+                            </ul>
+                        </template>
+                        <template if:false={compliancePillars.length}>
+                            <div class="slds-text-body_regular">No compliance scorecards available yet.</div>
+                        </template>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <template if:true={scorecardMetrics.length}>
+            <div class="slds-grid slds-gutters slds-m-bottom_medium">
+                <div class="slds-col slds-size_1-of-1">
+                    <article class="slds-card custom-card">
+                        <div class="slds-card__header slds-grid card-header-custom">
+                            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                <lightning-icon icon-name="standard:report" size="small"
+                                    class="slds-m-right_small"></lightning-icon>
+                                <h2 class="slds-text-heading_small slds-truncate">RECENT SCORECARDS</h2>
+                            </header>
+                        </div>
+                        <div class="slds-card__body slds-p-horizontal_small">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th scope="col"><div class="slds-truncate">Advisor</div></th>
+                                        <th scope="col"><div class="slds-truncate">Score Month</div></th>
+                                        <th scope="col"><div class="slds-truncate">Overall</div></th>
+                                        <th scope="col"><div class="slds-truncate">Engagement</div></th>
+                                        <th scope="col"><div class="slds-truncate">Revenue</div></th>
+                                        <th scope="col"><div class="slds-truncate">Quality</div></th>
+                                        <th scope="col"><div class="slds-truncate">Adoption</div></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={scorecardMetrics} for:item="card">
+                                        <tr key={card.rowKey}>
+                                            <td data-label="Advisor"><div class="slds-truncate">{card.advisorName}</div></td>
+                                            <td data-label="Score Month"><div class="slds-truncate">{card.scoreMonth}</div></td>
+                                            <td data-label="Overall"><div class="slds-truncate"><strong>{card.overallScore}</strong></div></td>
+                                            <td data-label="Engagement"><div class="slds-truncate">{card.clientEngagement}</div></td>
+                                            <td data-label="Revenue"><div class="slds-truncate">{card.revenueGrowth}</div></td>
+                                            <td data-label="Quality"><div class="slds-truncate">{card.advisorQuality}</div></td>
+                                            <td data-label="Adoption"><div class="slds-truncate">{card.adoption}</div></td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </template>
+
+    </div>
+</template>

@@ -1,0 +1,64 @@
+{
+  "records": [
+    {
+      "attributes": { "type": "Account", "referenceId": "AccountA" },
+      "Name": "North Direct Advisors",
+      "Advisor_Name__c": "Edison Chukwuemeka",
+      "Type": "Customer - Direct",
+      "AnnualRevenue": 1800000,
+      "NumberOfEmployees": 180,
+      "Rating": "Compliant",
+      "CustomerPriority__c": "High",
+      "UpsellOpportunity__c": "Yes",
+      "SLAExpirationDate__c": "2026-06-24"
+    },
+    {
+      "attributes": { "type": "Account", "referenceId": "AccountB" },
+      "Name": "West Channel Advisory",
+      "Advisor_Name__c": "Thomas Edison",
+      "Type": "Customer - Channel",
+      "AnnualRevenue": 420000,
+      "NumberOfEmployees": 90,
+      "Rating": "Warm",
+      "CustomerPriority__c": "Medium",
+      "UpsellOpportunity__c": "No",
+      "SLAExpirationDate__c": "2026-06-04"
+    },
+    {
+      "attributes": { "type": "Account", "referenceId": "AccountC" },
+      "Name": "South Risk Advisors",
+      "Advisor_Name__c": "Edwards Robinson",
+      "Type": "Customer - Direct",
+      "AnnualRevenue": 780000,
+      "NumberOfEmployees": 60,
+      "Rating": "At Risk",
+      "CustomerPriority__c": "Low",
+      "UpsellOpportunity__c": "Yes",
+      "SLAExpirationDate__c": "2026-05-20"
+    },
+    {
+      "attributes": { "type": "Account", "referenceId": "AccountD" },
+      "Name": "East Growth Portfolio",
+      "Advisor_Name__c": "Adepeju Davies",
+      "Type": "Customer - Channel",
+      "AnnualRevenue": 2500000,
+      "NumberOfEmployees": 210,
+      "Rating": "Compliant",
+      "CustomerPriority__c": "High",
+      "UpsellOpportunity__c": "Yes",
+      "SLAExpirationDate__c": "2026-07-09"
+    },
+    {
+      "attributes": { "type": "Account", "referenceId": "AccountE" },
+      "Name": "Central Review Client",
+      "Advisor_Name__c": "Ellen Martins",
+      "Type": "Customer - Direct",
+      "AnnualRevenue": 120000,
+      "NumberOfEmployees": 15,
+      "Rating": "Warning",
+      "CustomerPriority__c": "Low",
+      "UpsellOpportunity__c": "No",
+      "SLAExpirationDate__c": "2026-06-01"
+    }
+  ]
+}

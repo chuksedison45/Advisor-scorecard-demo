@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Advisor_Quality_Score_Activity_Driven__c</fullName>
+    <externalId>false</externalId>
+    <formula>ROUND(
+(
+Retention_Rate__c * 100 * 0.6 +
+Clients_Engaged_Period__c * 100 * 0.4
+),
+0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Advisor Quality Score(Activity Driven)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

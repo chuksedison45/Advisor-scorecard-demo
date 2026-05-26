@@ -1,0 +1,44 @@
+{
+  "records": [
+    {
+      "attributes": { "type": "Task", "referenceId": "TaskA" },
+      "Subject": "Client check-in",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-05-23",
+      "WhatId": "@AccountA"
+    },
+    {
+      "attributes": { "type": "Task", "referenceId": "TaskB" },
+      "Subject": "Quarterly review",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-04-15",
+      "WhatId": "@AccountB"
+    },
+    {
+      "attributes": { "type": "Task", "referenceId": "TaskC" },
+      "Subject": "Follow-up risk review",
+      "Status": "Not Started",
+      "Priority": "High",
+      "ActivityDate": "2026-02-20",
+      "WhatId": "@AccountC"
+    },
+    {
+      "attributes": { "type": "Task", "referenceId": "TaskD" },
+      "Subject": "Pipeline planning",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-05-15",
+      "WhatId": "@AccountD"
+    },
+    {
+      "attributes": { "type": "Task", "referenceId": "TaskE" },
+      "Subject": "Client review overdue",
+      "Status": "Completed",
+      "Priority": "High",
+      "ActivityDate": "2026-01-25",
+      "WhatId": "@AccountE"
+    }
+  ]
+}

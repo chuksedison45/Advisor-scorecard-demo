@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_Engagement_Indicator__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+  Client_Engagement_RAG__c,
+  &quot;Green&quot;,
+  IMAGE(
+    &quot;https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Green_circle.svg/1024px-Green_circle.svg.png&quot;,
+    &quot;Green&quot;,
+    15,
+    15
+  ),
+  &quot;Amber&quot;,
+  IMAGE(
+    &quot;https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Orange_circle.svg/1024px-Orange_circle.svg.png&quot;,
+    &quot;Amber&quot;,
+    15,
+    15
+  ),
+  IMAGE(
+    &quot;https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Red_circle.svg/1024px-Red_circle.svg.png&quot;,
+    &quot;Red&quot;,
+    15,
+    15
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Client Engagement Indicator</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

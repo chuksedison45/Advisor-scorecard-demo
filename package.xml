@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>IWAG_Scorecard</members>
+        <name>ReportType</name>
+    </types>
+    <types>
+        <members>unfiledPublic/IWAG_Adoption_Scorecard_Report</members>
+        <members>unfiledPublic/IWAG_Advisor_Quality_Scorecard_Report</members>
+        <members>unfiledPublic/IWAG_Client_Engagement_Scorecard_Report</members>
+        <members>unfiledPublic/IWAG_Revenue_Growth_Scorecard_Report</members>
+        <name>Report</name>
+    </types>
+    <types>
+        <members>unfiledPublic</members>
+        <name>ReportFolder</name>
+    </types>
+    <version>66.0</version>
+</Package>

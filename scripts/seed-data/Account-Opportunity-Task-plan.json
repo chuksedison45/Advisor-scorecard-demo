@@ -1,0 +1,19 @@
+[
+  {
+    "sobject": "Account",
+    "saveRefs": true,
+    "files": ["Account.json"]
+  },
+  {
+    "sobject": "Opportunity",
+    "files": ["Opportunity.json"]
+  },
+  {
+    "sobject": "Task",
+    "files": ["Task.json"]
+  },
+  {
+    "sobject": "IWAG_Scorecard__c",
+    "files": ["IWAGScorecard.json"]
+  }
+]

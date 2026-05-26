@@ -1,0 +1,79 @@
+{
+  "records": [
+    {
+      "attributes": { "type": "User", "referenceId": "UserEdison" },
+      "FirstName": "Edison",
+      "LastName": "Chukwuemeka",
+      "Alias": "echukwu",
+      "Email": "edison.chukwuemeka+seed@example.com",
+      "Username": "edison.chukwuemeka+seed@example.com",
+      "CommunityNickname": "EdisonC",
+      "TimeZoneSidKey": "America/Los_Angeles",
+      "LocaleSidKey": "en_US",
+      "EmailEncodingKey": "UTF-8",
+      "LanguageLocaleKey": "en_US",
+      "ProfileId": "00egL000009t4jEQAQ",
+      "IsActive": true
+    },
+    {
+      "attributes": { "type": "User", "referenceId": "UserThomas" },
+      "FirstName": "Thomas",
+      "LastName": "Edison",
+      "Alias": "tedison",
+      "Email": "thomas.edison+seed@example.com",
+      "Username": "thomas.edison+seed@example.com",
+      "CommunityNickname": "ThomasE",
+      "TimeZoneSidKey": "America/Los_Angeles",
+      "LocaleSidKey": "en_US",
+      "EmailEncodingKey": "UTF-8",
+      "LanguageLocaleKey": "en_US",
+      "ProfileId": "00egL000009t4jEQAQ",
+      "IsActive": true
+    },
+    {
+      "attributes": { "type": "User", "referenceId": "UserEdwards" },
+      "FirstName": "Edwards",
+      "LastName": "Robinson",
+      "Alias": "erobins",
+      "Email": "edwards.robinson+seed@example.com",
+      "Username": "edwards.robinson+seed@example.com",
+      "CommunityNickname": "EdwardsR",
+      "TimeZoneSidKey": "America/Los_Angeles",
+      "LocaleSidKey": "en_US",
+      "EmailEncodingKey": "UTF-8",
+      "LanguageLocaleKey": "en_US",
+      "ProfileId": "00egL000009t4jEQAQ",
+      "IsActive": true
+    },
+    {
+      "attributes": { "type": "User", "referenceId": "UserAdepeju" },
+      "FirstName": "Adepeju",
+      "LastName": "Davies",
+      "Alias": "adavies",
+      "Email": "adepeju.davies+seed@example.com",
+      "Username": "adepeju.davies+seed@example.com",
+      "CommunityNickname": "AdepejuD",
+      "TimeZoneSidKey": "America/Los_Angeles",
+      "LocaleSidKey": "en_US",
+      "EmailEncodingKey": "UTF-8",
+      "LanguageLocaleKey": "en_US",
+      "ProfileId": "00egL000009t4jEQAQ",
+      "IsActive": true
+    },
+    {
+      "attributes": { "type": "User", "referenceId": "UserEllen" },
+      "FirstName": "Ellen",
+      "LastName": "Martins",
+      "Alias": "emartin",
+      "Email": "ellen.martins+seed@example.com",
+      "Username": "ellen.martins+seed@example.com",
+      "CommunityNickname": "EllenM",
+      "TimeZoneSidKey": "America/Los_Angeles",
+      "LocaleSidKey": "en_US",
+      "EmailEncodingKey": "UTF-8",
+      "LanguageLocaleKey": "en_US",
+      "ProfileId": "00egL000009t4jEQAQ",
+      "IsActive": true
+    }
+  ]
+}

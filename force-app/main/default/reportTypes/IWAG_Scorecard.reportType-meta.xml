@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>IWAG_Scorecard__c</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>Report type for IWAG scorecards grouped by advisor.</description>
+    <label>IWAG Scorecard</label>
+    <sections>
+        <masterLabel>Scorecards</masterLabel>
+    </sections>
+</ReportType>

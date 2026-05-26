@@ -1,0 +1,36 @@
+{
+  "records": [
+    {
+      "attributes": { "type": "Opportunity", "referenceId": "OppA" },
+      "Name": "Pipeline Opp 1",
+      "StageName": "Prospecting",
+      "CloseDate": "2026-06-24",
+      "Amount": 300000,
+      "AccountId": "@AccountA"
+    },
+    {
+      "attributes": { "type": "Opportunity", "referenceId": "OppB" },
+      "Name": "Pipeline Opp 2",
+      "StageName": "Qualification",
+      "CloseDate": "2026-07-09",
+      "Amount": 550000,
+      "AccountId": "@AccountC"
+    },
+    {
+      "attributes": { "type": "Opportunity", "referenceId": "OppC" },
+      "Name": "Growth Proposal",
+      "StageName": "Proposal/Price Quote",
+      "CloseDate": "2026-08-23",
+      "Amount": 1200000,
+      "AccountId": "@AccountD"
+    },
+    {
+      "attributes": { "type": "Opportunity", "referenceId": "OppD" },
+      "Name": "Review Opportunity",
+      "StageName": "Needs Analysis",
+      "CloseDate": "2026-06-14",
+      "Amount": 80000,
+      "AccountId": "@AccountE"
+    }
+  ]
+}
